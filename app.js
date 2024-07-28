@@ -4,6 +4,7 @@ require("dotenv").config();
 
 const authRoutes = require("./route/auth.route");
 const morgan = require("morgan");
+require("./config/db-config");
 app.use(morgan("tiny"));
 app.use(authRoutes);
 app.get("/", (req, res) => {
