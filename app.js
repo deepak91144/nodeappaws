@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
-const port = 3000;
+require("dotenv").config();
+
 const authRoutes = require("./route/auth.route");
 const morgan = require("morgan");
 app.use(morgan("tiny"));
@@ -11,4 +12,6 @@ app.get("/", (req, res) => {
 		data: "working",
 	});
 });
-app.listen(port, () => console.log(`Example app listening on port ${port}!`));
+app.listen(process.env.PORT, () =>
+	console.log(`Example app listening on port ${port}!`)
+);
