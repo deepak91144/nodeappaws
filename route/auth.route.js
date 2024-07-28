@@ -6,4 +6,10 @@ router.get("/products", (req, res) => {
 	});
 });
 
+router.get("/users", (req, res) => {
+	res.status(200).json({
+		dataL: "users",
+	});
+});
+
 module.exports = router;
